@@ -1,0 +1,33 @@
+<div class="container-fluid" id="feeder" > <!- ng-repeat="user in users | filter:{'id':  customerid }:true"!-->
+    <div class="row bg-title">
+        <div style="max-width: 700px; padding:50px 0;  margin: 0px auto; font-size: 14px">
+            <div style="padding: 40px; background: #fff;">
+                <form id="cleanfeedForm" name="cleanfeedForm" ng-submit="cleanfeedForm.$valid && cleaner_rating()" novalidate>
+                    <table style="width: 100%;" cellspacing="0" cellpadding="0" border="0">
+                        <tbody>
+                            <tr>
+                                <td> <b>Dear Employer </b>
+                                    <p>Its been a wonderfull experience with you. Really Enjoyed and glad to spent some quality
+                                        time chit chats. Please leave feed back to let others know how was Your experience
+                                        with Me.
+                                    </p>
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <h5 style="font-weight: bold;text-align: center">Rate Your Experience </h5>
+                                        <p ng-show="submitted && cleanfeedForm.rating.$invalid" class="help-block color-red text-center">Choose Rating Please</p>
+                                        <div class="col-md-7 col-md-offset-5 col-sm-12 col-xs-12">
+                                            <ng-rate-it name="rating" ng-model="ratingData.rating" required></ng-rate-it>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <button class="btn btn-primary pull-right" ng-click="submitted=true;">Rate Customer
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

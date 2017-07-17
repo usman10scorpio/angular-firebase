@@ -1,0 +1,38 @@
+{
+  "name": "cleaner",
+  "authors": [
+    "thisisirfan <irfansaddress@gmail.com>"
+  ],
+  "description": "Go Cleaner",
+  "main": "index.html",
+  "keywords": [
+    "Cleaner"
+  ],
+  "license": "MIT",
+  "homepage": "index.php",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.1",
+    "jquery": "^3.1.1",
+    "moment": "^2.17.1",
+    "bootstrap": "^3.3.7",
+    "AngularJS-Toaster": "angularjs-toaster#^2.1.0",
+    "angular-moment": "^1.0.1",
+    "angular-loading-bar": "^0.9.0",
+    "components-font-awesome": "^4.7.0",
+    "lato": "^0.3.0",
+    "angular-bootstrap": "^2.5.0",
+    "owl.carousel": "^2.2.1",
+    "angular-ui-select": "^0.19.6",
+    "angular-sanitize": "^1.6.3",
+    "ng-file-upload": "^12.2.13",
+    "angularfire": "^2.3.0"
+  }
+}

@@ -1,0 +1,57 @@
+<!--<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Price</th>
+            <th>contact No</th>
+            <th>Category</th>
+            <th>Region</th>
+            <th>Date</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr ng-repeat="jobs in ljobs">
+            <td class="txt-oflo">{{jobs.title}}</td>
+            <td class="txt-oflo">{{jobs.price}}</td>
+            <td class="txt-oflo">{{jobs.contact_no}}</td>
+            <td class="txt-oflo">{{jobs.category.name}}</td>
+            <td class="txt-oflo">{{jobs.region.name}}</td>
+            <td class="txt-oflo">{{jobs.date}}</td>
+            <td class="txt-oflo">
+                <a href="" ng-click="viewJobModel(jobs)"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                <a ng-if="$root.role === '10'" href="" ng-click="viewUpdateModel(jobs)"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                <a ng-if="$root.role === '10'" href="" ng-click="del_job(jobs.id)"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+        </tr>
+    </tbody>
+</table>-->
+<ul class="search-listing">
+    <li ng-repeat="jobs in ljobs">
+        <h3><a href="#/single-job/{{jobs.id}}">{{jobs.title}}</a>
+            <div class="pull-right">
+                <!--<a ng-click="viewJobModel(jobs)" href=""><i class="fa fa-eye" aria-hidden="true"></i></a>-->
+                <a ng-if="$root.role === '10'" href="" ng-click="viewUpdateModel(jobs)"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                <a ng-if="$root.role === '10'" href="" ng-click="del_job(jobs.id)"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                <a ng-if="$root.role === '10'" href="#/feedback-customer/{{jobs.id}}"  ><i class="fa fa-star-o" aria-hidden="true"></i></a>
+
+            </div>
+        </h3>
+
+        <p><span><i class="fa fa-usd color-greenpk" aria-hidden="true"></i> {{jobs.price}}</span>
+            <span class="p-l-10"><i class="fa fa-calendar color-grey" aria-hidden="true"></i> {{jobs.date}}</span>
+            <span class="p-l-10"><i class="fa fa-map-marker color-blue" aria-hidden="true"></i> {{jobs.region.name}}</span>
+            <span class="p-l-10"><i class="fa fa-tasks color-greenpk" aria-hidden="true"></i> {{jobs.category.name}}</span>
+            <span class="p-l-10"><i class="fa fa-phone color-grey" aria-hidden="true"></i> {{jobs.contact_no}}</span>
+        </p>
+        <p ng-show="half==true">
+            <i class="fa fa-file-text color-blue" aria-hidden="true"></i> {{jobs.description | limitTo: numlimit}}{{jobs.description.length
+            > numlimit ? '...' : ''}} <a class="btn btn-link p-0" href="#/single-job/{{jobs.id}}">See more</a>
+
+        </p>
+        <!--<p ng-show="half==false">
+            <i class="fa fa-file-text color-blue" aria-hidden="true"></i> {{jobs.description}}
+            <button class="btn btn-link p-0" ng-click="half = true;" class="cursor-pointer">See less</button>
+        </p>-->
+    </li>
+</ul>

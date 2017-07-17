@@ -1,0 +1,43 @@
+<!--<table class="table table-striped" ng-show="show_table_clean">
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>Username</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="r in rsc">
+            <td class="txt-oflo">{{r.user.email}}</td>
+            <td class="txt-oflo">{{r.user.username}}</td>
+            <td><a href="" ng-click="viewProfileModel(r)"><i class="fa fa-eye" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+    </tbody>
+    <div ng-show="show_table_clean">
+        <button ng-click="show_table_clean=false;show_search_clean=true;searchcleanData=[];" class="btn btn-success">Back</button></div>
+</table>-->
+
+<ul class="search-listing" ng-show="show_table_clean">
+    <div ng-show="show_table_clean">
+        <button ng-click="show_table_clean=false;show_search_clean=true;searchcleanData=[];" class="btn btn-success">Back</button></div>
+
+    <li ng-repeat="r in rsc">
+        <h3 class="p-l-10">
+            <a href="#/single-cleaner/{{r.user_id}}">{{r.user.username}}</a>
+            <div class="pull-right">
+                <img src="asset_files/images/users/varun.jpg" alt="user-img" class="img-circle" width="36">
+            </div>
+        </h3>
+        <p class="p-l-10"><span><ng-rate-it ng-model="readonly" read-only="true"></ng-rate-it></span>
+            <span ng-if="r.user.first_name || r.user.last_name"><i class="fa fa-user" aria-hidden="true"></i> {{r.user.first_name}} {{r.user.last_name}}</span>
+            <span class="p-l-10" ng-if="r.user.contact_no"><i class="fa fa-phone" aria-hidden="true"></i> {{r.user.contact_no}}</span>
+            <span class="p-l-10" ng-if="r.user.email"><i class="fa fa-envelope" aria-hidden="true"></i> {{r.user.email}}</span>
+            <span class="p-l-10" ng-if="r.user.address"><i class="fa fa-globe" aria-hidden="true"></i> {{r.user.address}}</span>
+        </p>
+        <p class="p-l-10">
+            <span><i class="fa fa-user-secret" aria-hidden="true"></i> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</span>
+        </p>
+    </li>
+    <p class="text-center" ng-if="!length_of_result">No results found</p>
+</ul>

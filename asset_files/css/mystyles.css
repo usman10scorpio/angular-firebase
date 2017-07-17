@@ -1,0 +1,465 @@
+@import "theme_style.css";
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+#wrapper
+{
+	max-width: initial;
+}
+.footer
+{
+	max-width: initial;
+}
+.height-130
+{
+	/*height:130px;*/
+	height: 100px; /*Ak Styles*/
+}
+.outer-div
+{
+	height: 350px; background-color: white
+}
+.bg-prop-along
+{
+	height: 300px !important;position: relative;
+}
+.img-prop
+{
+	width: 150px;height: 150px;border: 5px solid white;
+}
+.display-inline-block
+{
+	display: inline-block;
+} 
+.font-size-25
+{
+	font-size: 25px;
+}
+.color-white
+{
+	color: white;
+}
+.navbar-header {
+    background:white !important;
+}
+.sidebar
+{
+	position: fixed;
+	    top: 0px;
+	/*max-width: 1400px;*/
+	box-shadow: 1px 0px 20px white !important; 
+} /*For fixed headr*/
+.pd-top-25
+{
+	/*padding-top:25px;*/
+	padding-top: 25px; /*AK Styles*/
+}
+.bg-f1
+{
+	background-color:#f1f1f1;
+}
+.pd-top-10
+{
+	padding-top: 10px;
+}
+/*Over riding*/
+.footer
+{
+	position: inherit;
+}
+
+.thin-steps .step-title
+{
+font-size:14px;	
+}
+.bg-prop
+{
+background-size: cover;
+height: 492px;
+background-repeat: no-repeat;
+background-position:center;
+}
+
+.width-100p
+{
+	width : 100%;
+}
+.height-184
+{
+	height : 184px;
+}
+.padding-bottom-23
+{
+	padding-bottom : 23px;
+}
+.pd-bt-10
+{
+	padding-bottom :10px;
+}
+.icons
+{
+	list-style : none;
+}
+.icons li 
+{
+	display :inline;
+	padding-right: 10px;
+	
+}
+.icons li i 
+{
+	font-size : 30px;
+}
+.icons li a
+{
+	color : #686868;
+}
+.icons li .fb :hover
+{
+	color:#507cbe;
+}
+.icons li .twitter :hover
+{
+	color:#00abef;
+}
+.icons li .google:hover
+{
+	color:#d93e2d;
+}
+.icons li .youtube:hover
+{
+	color:#d12121;
+}
+.bg-grey
+{
+	background-color:grey;
+}
+.color-red
+{
+	color:red;
+}
+.color-green
+{
+	color: gree;
+}
+.color-feroz
+{
+	color: #01c0c8;
+}
+.color-greenpk
+{
+	color: #006600;
+}
+.color-grey
+{
+	color: grey
+}
+.background-f2
+{
+	background-color: #f2f2f6
+}
+.background-e6
+{
+	background-color: #e6e6e6
+}
+.font-40
+{
+	font-size: 40px !important;
+}
+.lower-box
+{
+	font-size: 14px;
+    padding-bottom: 20px;
+}
+.overflow-y
+{
+	overflow-y : scroll;
+}
+.cursor-pointer
+{
+	cursor:pointer;
+}
+.m-l-8
+{
+	margin-left:8px;
+}
+.login-register {
+		background: none !important;
+    background-color: #f7f7f7 !important;
+}
+.height-50
+{
+	height: 50px;
+}
+.p-t-2
+{
+	padding-top: 2px;
+}
+.login-register
+{
+	position: initial;
+}
+.login-box
+{
+	margin: 0px 100px;
+	
+}
+.m-t-100
+{
+	margin-top: 100px !important; 
+}
+.scroll-dropdown
+{
+	overflow: scroll;
+}
+.height-250
+{
+	height: 250px;
+}
+.m-l-25
+{
+	margin-left: 25px;
+}
+
+@media (min-width: 370px){
+#wrapper.fix-top .sidebar {
+    max-width: initial;
+ 
+}}
+@media screen and (max-width:767px) {
+	#wid-perc
+	{
+		width: 100%;
+	}
+	.height-130
+	{
+		height:auto;
+			padding-top: 0px;
+
+	}
+	.login-box
+	{
+		margin: 0 auto;
+	}
+}
+
+/* AK Style */
+a.logo span img {width: 200px;}
+.carousel-indicators li {
+	border: 1px solid #03a9f3;
+}
+.carousel-indicators .active {
+	background: #03a9f3;
+}
+
+.white-box .box-title {
+    font-weight: 600;
+    font-size: 16px;
+    color: #03a9f3;
+}
+.middle-ad
+{
+	width:100%;
+	height: 150px;
+}
+.sidebar_img
+{
+	height: 700px;
+}
+.bord-home
+{
+	border-right : 1px solid #eeeeee;
+	border-bottom : 1px solid #eeeeee;
+}
+.bord-home img
+{
+		margin-bottom: 10px;	
+
+}
+.display-block
+{
+	display: block !important;
+}
+.font-size-30
+{
+	font-size : 30px;
+}
+.color-blue
+{
+	color:#03a9f3;
+}
+.m-a
+{
+	margin: auto;
+}
+.cursor-pointer
+{
+	cursor:pointer;
+}
+.text-decor-under
+{
+  text-decoration: underline;
+}
+
+/*********hide and show*******
+/* when hiding the thing */
+/*.ng-hide-add         { 
+  -webkit-animation:0.3s lightSpeedOut ease; 
+  animation:0.3s lightSpeedOut ease; 
+}
+
+/* when showing the thing */
+/*.ng-hide-remove      { 
+  -webkit-animation:0.3s lightSpeedOut ease; 
+  animation:0.3s lightSpeedOut ease; 
+}*/
+
+
+
+/***************************** overridiing ****************/
+.icon-list-demo div {
+	line-height: 25px;
+}
+.m-a {
+    width: 45px;
+}
+.mail-list .list-group-item {
+    border-bottom: 3px solid #f6f6f6;
+    }
+.mail-list .list-group-item:hover
+{
+background: #01c0c8;
+color:white;
+}
+.mail-list .list-group-item.active:focus
+{
+background: #336cef;
+color:white !important;
+border-left: 3px solid #01c0c8; 
+}
+.mail-list .list-group-item.active{
+background: #336cef;
+color:white !important;
+border-left: 3px solid #01c0c8; 
+}
+a.list-group-item:hover, a.list-group-item:focus
+{
+  background-color: #336cef;
+  color:white;
+
+}
+#side-menu > li > a.active {
+    border-bottom : inherit;
+    color: inherit;
+    font-weight: inherit;
+}
+.line-steps .finish .step-number
+{
+  color: #336cef;
+}
+.login-box {
+     background : none; 
+}
+#wrapper
+{
+	box-shadow:  1px 0 50px #edf1f5;
+}
+.feeds li:hover {
+    background : none;
+}
+													/* Css of file upload */
+.thumb {
+    width: 24px;
+    height: 24px;
+    float: none;
+    position: relative;
+    top: 7px;
+}
+
+form .progress {
+    line-height: 15px;
+}
+
+/*.progress {
+    display: inline-block;
+    width: 100px;
+    border: 3px groove #CCC;
+}*/
+
+.progress div {
+    font-size: smaller;
+    background: #01c0c8;
+    width: 0;
+	padding: 5px;
+    text-align: center;
+}
+	#product_uplaoded_images{
+    margin-top: 15px;
+}
+
+#product_uplaoded_images li{
+    display: inline-block;
+    position: relative;
+}
+
+#product_uplaoded_images .badge{
+    background-color: red;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 3px 4px;
+    cursor: pointer;
+}
+
+#product_uplaoded_images img{
+    border-radius: 4px;
+    margin: 5px;  
+    max-width: 100px;
+}			
+.center-ad
+{
+	width: 100%;height:150px
+}								/* Css of file upload ends here */
+
+	
+/**************************** overriding ends here*********
+
+/**********************************cdash.html page style************************/
+
+@media (min-width: 370px){
+    
+    
+    #wrapper.fix-top #page-wrapper {
+        padding-top: 0px !important;
+    }   
+    .hidden-xs{
+        font-weight: bolder;
+    }   
+}
+@media (min-width: 1600px){
+.container {
+    width: 1400px;
+}}
+
+/*Did by irfan bhai responsiveness - Mon 24 april*/
+
+@media (max-width: 480px){
+.bg-title {
+        margin: 0px auto;
+    width: 100%;
+    padding-top: 0px !important;
+}
+
+.sidebar {
+    padding-bottom: 10px;
+	    z-index: 999;
+		border-bottom: 1px solid #eee;
+}
+
+.logo{
+	    width: 100%;
+    display: inline-block;
+    text-align: center;
+}
+}
+/*Ibhai works ends here*/

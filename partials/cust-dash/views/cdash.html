@@ -1,0 +1,612 @@
+<!-- Page Content -->
+<!--Customer View single Job -->
+<style>
+    #postjob .input-group .form-control {
+        z-index: initial;
+    }
+
+    .input-group .form-control {
+        z-index: initial;
+    }
+</style>
+<!--<div id="cust_view_job" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content popups">
+            <div class="modal-header fb-header title-bar text-center">
+                View Job<button type="button" class="close-signin pull-right" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="login_wrap_body">
+                    <div class="">
+                        <div class="white-box">
+                            <view-job info="sjob"></view-job>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->
+<!--Customer View single Job ends here -->
+
+<!--Customer update single Job -->
+<!--<div id="cust_update_job" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content popups">
+            <div class="modal-header fb-header title-bar text-center">
+                Update Job<button type="button" class="close-signin pull-right" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="login_wrap_body">
+                    <div class="">
+                        <form class="form-horizontal" style="overflow: visible;" id="customerupForm" name="customerupForm" ng-submit="customerupForm.$valid && updatejob(jobData.id)"
+                            novalidate>
+                            <div class="form-group">
+                                <label class="col-sm-12">Title</label>
+                                <p ng-show="submitted && customerForm.title.$invalid" class="help-block color-red">Enter Title Please</p>
+                                <div class="input-group col-sm-12">
+                                    <div class="input-group-addon"><i class="fa fa-header" aria-hidden="true"></i></div>
+                                    <input class="form-control" placeholder="Add title" name="title" ng-model="jobData.title" type="text" required>
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-12">Price</label>
+                                <p ng-show="submitted && customerForm.price.$invalid" class="help-block color-red col-sm-12">Enter Price Please</p>
+                                <div class="input-group col-sm-12">
+                                    <div class="input-group-addon"><i class="fa fa-money" aria-hidden="true"></i></div>
+                                    <input class="form-control" placeholder="Price" name="price" ng-model="jobData.price" type="text">
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-12">Address</label>
+                                <p ng-show="submitted && customerForm.address.$invalid" class="help-block color-red col-sm-12">Add address please</p>
+                                <div class="input-group col-sm-12">
+                                    <div class="input-group-addon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                                    <input class="form-control" placeholder="Address" name="address" ng-model="jobData.address" type="text">
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-12">Contact No</label>
+                                <p ng-show="submitted && customerForm.contact.$invalid" class="help-block color-red col-sm-12">Add contact number please</p>
+                                <div class="input-group col-sm-12">
+                                    <div class="input-group-addon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+                                    <input class="form-control" placeholder="Contact No" name="contact" ng-model="jobData.contact_no" type="text" required>
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-12">Choose Category</label>
+                                <p ng-show="submitted && customerForm.categories.$invalid" class="help-block color-red">Choose valid Category</p>
+                                <div class="input-group col-sm-12">
+                                    <div class="input-group-addon"><i class="fa fa-tasks" aria-hidden="true"></i></div>
+                                    <select class="col-md-12 col-sm-12 col-xs-12" style="padding: 5px;" name="categories" ng-model="jobData.category_id" ng-options="cat.id as cat.name for cat in pref_categories"
+                                        required>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-12">Choose Region</label>
+                                <p ng-show="submitted && customerForm.regions.$invalid" class="help-block color-red">Choose valid region</p>
+                                <div class="input-group col-sm-12">
+                                    <div class="input-group-addon"><i class="fa fa-globe" aria-hidden="true"></i></div>
+                                    <select class="col-md-12 col-sm-12 col-xs-12 " style="padding: 5px;" name="regions" ng-model="jobData.region_id" ng-options="reg.id as reg.name for reg in regions"
+                                        required>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-12">Choose Date</label>
+                                <p ng-show="submitted && customerForm.date.$invalid" class="help-block color-red">Choose valid date</p>
+                                <div class="input-group col-sm-12">
+                                    <div class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></div>
+                                    <input class="form-control mydatepicker m-l-8" name="date" ng-model="jobData.date" placeholder="yyyy/mm/dd" type="text" required>
+                                    <!--<span class="input-group-addon"><i class="icon-calender"></i></span>-->
+<!--</div>
+</div>
+<div class="form-group">
+    <label class="col-md-12">Description</label>
+    <div class="col-md-12">
+        <p ng-show="submitted && customerupForm.description.$invalid" class="help-block color-red">Enter valid description</p>
+        <textarea rows="5" ng-model="jobData.description" name="description" class="form-control form-control-line"></textarea>
+    </div>
+</div>
+<div class="form-group">
+    <div class="col-sm-12">
+        <button class="btn btn-success" type="submit" ng-click="submitted=true">Update Job</button>
+    </div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>-->
+<!--cleaner profile here -->
+<!--
+<div id="clean_profile" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content popups">
+            <div class="modal-header fb-header title-bar text-center">
+                View Job<button type="button" class="close-signin pull-right" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="login_wrap_body">
+                    <div class="">
+                        <div class="white-box">
+                            <ul class="feeds">
+                                <li>
+                                    <div><i class="fa fa-header" aria-hidden="true"></i></div>
+                                    First Name : {{profile.first_name}}</li>
+                                <li>
+                                    <div><i class="fa fa-money" aria-hidden="true"></i></div>
+                                    Last Name : {{profile.last_name}}</li>
+                                <li>
+
+                                    <div><i class="fa fa-phone" aria-hidden="true"></i></div>
+                                    Contact # : {{profile.contact_no}}</li>
+                                <li>
+                                    <div><i class="fa fa-tasks" aria-hidden="true"></i></div>
+                                    email : {{profile.email}}</li>
+                                <li>
+                                    <div><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                                    Address : {{profile.address}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->
+<!--cleaner profile ends here -->
+<!-- /.row -->
+<!-- .row -->
+<div class="container p-t-20">
+    <div class="row">
+        <div class="col-md-2 col-xs-2 col-sm-2 p-r-0">
+            <img ng-if="all_ads[0].image" ng-src="{{$root.api_img_url}}{{all_ads[0].image}}" alt="Not Available" class="img-thumbnail sidebar_img">
+            <img ng-if="!all_ads[0].image" src="asset_files/images/default.png" alt="Image Not Available" class="img-thumbnail sidebar_img text-center">
+
+        </div>
+
+        <div class="col-md-8 col-sm-8 col-xs-8  p-t-2">
+            <div class="row m-b-10">
+                <div class="col-md-12">
+                    <img ng-if="all_ads[1].image" ng-src="{{$root.api_img_url}}{{all_ads[1].image}}" alt="Not Available" class="img-thumbnail" style="width: 100%;height:150px"
+                    />
+                    <img ng-if="!all_ads[1].image" src="asset_files/images/pool2default.png" alt="Image Not Available" class="img-thumbnail text-center" style="width: 100%;height:150px"
+                    />
+                </div>
+                <div style="clear:both">
+                </div>
+            </div>
+            <div class="white-box p-l-0  p-t-0">
+                <!-- row -->
+                <div class="row">
+                    <div class="col-lg-2 col-md-3  col-sm-12 col-xs-12 inbox-panel  p-r-0">
+                        <div>
+                            <div class="list-group mail-list">
+                                <a href="" ng-click="show=1" class="list-group-item"><i class="fa fa-sticky-note" aria-hidden="true"></i> Post Job</a>
+                                <a href="" ng-click="show=2" class="list-group-item"><i class="fa fa-briefcase" aria-hidden="true"></i> My  Jobs</a>
+                                <a href="" ng-click="show=3" class="list-group-item"><i class="fa fa-search" aria-hidden="true"></i> Search Cleaners</a>
+                                <a href="" ng-click="show=4;viewprofile($root.id)" class="list-group-item"><i class="fa fa-user" aria-hidden="true"></i> Profile</a>
+                                <!--<a href="#/feedback-customer" class="list-group-item"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Feedback</a>-->
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-10 col-md-9 col-sm-12 col-xs-12 mail_listing p-t-20">
+                        <div class="inbox-center">
+
+                            <!--Post job !-->
+                            <div ng-show="show==1">
+                                <form class="form-horizontal col-md-8" name="postjobForm" ng-submit="postjobForm.$valid && postjob()" ng-controller="cdashCtrl as dash"
+                                    novalidate>
+                                    <div ng-hide="hide_div">
+                                        <step-one></step-one>
+                                        <div class="form-group">
+                                            <label class="col-sm-12">Title</label>
+                                            <p ng-show="submitted && postjobForm.title.$invalid" class="help-block color-red">Enter Title Please</p>
+                                            <div class="input-group col-sm-12">
+                                                <div class="input-group-addon"><i class="fa fa-header" aria-hidden="true"></i></div>
+                                                <input class="form-control" placeholder="Add title" name="title" ng-model="jobData.title" type="text" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-12 col-xs-12">Choose Category</label>
+                                            <p ng-show="submitted && postjobForm.categories.$invalid" class="help-block color-red">Choose valid Category</p>
+                                            <div class="input-group col-sm-12 col-xs-12">
+                                                <div class="input-group-addon"><i class="fa fa-tasks" aria-hidden="true"></i></div>
+                                                <ui-select ng-model="jobData.category_id" name="categories" theme="select2" class="form-control" title="Choose a category"
+                                                    required>
+                                                    <ui-select-match placeholder="Select a category from list...">{{$select.selected.name}}</ui-select-match>
+                                                    <ui-select-choices repeat="item.id as item in dash.categories | filter: $select.search">
+                                                        <div ng-bind-html="item.name | highlight: $select.search"></div>
+                                                    </ui-select-choices>
+                                                </ui-select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-12">Description</label>
+                                            <div class="col-md-12">
+                                                <p ng-show="submitted && postjobForm.description.$invalid" class="help-block color-red">Enter valid description</p>
+                                                <textarea rows="5" ng-model="jobData.description" name="description" class="form-control form-control-line"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <button class="btn btn-success" ng-click="hide_div=true">Continue</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div ng-show="hide_div">
+                                        <step-two></step-two>
+                                        <div class="form-group">
+                                            <label class="col-sm-12">Price</label>
+                                            <p ng-show="submitted && postjobForm.price.$invalid" class="help-block color-red col-sm-12">Enter Price Please</p>
+                                            <div class="input-group col-sm-12">
+                                                <div class="input-group-addon"><i class="fa fa-money" aria-hidden="true"></i></div>
+                                                <input class="form-control" placeholder="Price" name="price" ng-model="jobData.price" type="text">
+                                                <div class="input-group-addon" style="background-color:white;"><i class="fa fa-dollar" aria-hidden="true"></i></div>
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-12">Address</label>
+                                            <p ng-show="submitted && postjobForm.address.$invalid" class="help-block color-red col-sm-12">Add address please</p>
+                                            <div class="input-group col-sm-12">
+                                                <div class="input-group-addon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                                                <input class="form-control" placeholder="Address" name="address" ng-model="jobData.address" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-12">Contact No</label>
+                                            <p ng-show="submitted && postjobForm.contact.$invalid" class="help-block color-red col-sm-12">Add contact number please</p>
+                                            <div class="input-group col-sm-12">
+                                                <div class="input-group-addon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+                                                <input class="form-control" placeholder="Contact No" name="contact" ng-model="jobData.contact_no" type="text" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-12 col-xs-12">Choose Region</label>
+                                            <p ng-show="submitted && postjobForm.regions.$invalid" class="help-block color-red">Choose valid region</p>
+                                            <div class="input-group col-sm-12 col-xs-12">
+                                                <div class="input-group-addon"><i class="fa fa-globe" aria-hidden="true"></i></div>
+                                                <ui-select ng-model="jobData.region_id" name="regions" theme="select2" class="form-control" title="Choose a region" required>
+                                                    <ui-select-match placeholder="Select a region from list...">{{$select.selected.name}}</ui-select-match>
+                                                    <ui-select-choices repeat="item.id as item in dash.regions | filter: $select.search">
+                                                        <div ng-bind-html="item.name | highlight: $select.search"></div>
+                                                    </ui-select-choices>
+                                                </ui-select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-12">Choose Date</label>
+                                            <p ng-show="submitted && postjobForm.date.$invalid" class="help-block color-red">Choose valid date</p>
+                                            <div class="input-group col-sm-12">
+                                                <div class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></div>
+                                                <input class="form-control mydatepicker" name="date" ng-model="jobData.date" placeholder="yyyy/mm/dd" type="text">
+                                                <!--<span class="input-group-addon"><i class="icon-calender"></i></span>-->
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-12">Work Options</label>
+                                            <label class="radio-inline"><input type="radio" name="work_options" ng-model="jobData.work_options" value="1">Daily</label>
+                                            <label class="radio-inline"><input type="radio" name="work_options" ng-model="jobData.work_options" value="2">Weekly</label>
+                                            <label class="radio-inline"><input type="radio" name="work_options" ng-model="jobData.work_options" value="3">Monthly</label>                                            </div>
+                                        <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                            <hr/>
+
+                                            <div class="btn btn-primary" ngf-select="uploadFiles($files)" multiple accept="image/*" ngf-model-invalid="invalidImages"
+                                                required ngf-model-invalid="errorFiles" ngf-max-size="5MB">
+                                                Select Files</div> <small>Max file size 5Mb </small>
+                                            <br>
+                                            <br>Files:
+                                            <ul>
+                                                <li style="display: inline" ng-repeat="f in files" style="font:smaller">
+                                                    - {{f.name}} -
+                                                </li>
+                                            </ul>
+                                            <span class="progress" ng-show="progress >= 0">
+                                                    <div style="width:{{progress}}%" ng-bind="progress + '%'"></div>
+                                                </span> {{errorMsg}}
+                                        </div>
+                                        <!--<div class="col-md-12 col-md-6 col-sm-12 p-b-10" ng-if="multi_images_result">
+                                            <div class="col-md-6" ng-repeat="image in multi_images_result track by $index">
+                                            <img ng-src="http://project-demos.com/repair/common/upload/{{image}}" style="height:50px"
+                                                alt="upload_image">
+                                            </div>
+                                            </div>-->
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <button class="btn btn-link" ng-click="hide_div=false">Back</button>
+                                                <button class="btn btn-success" type="submit" ng-click="submitted=true" ng-disabled="fileselected">Post Job</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+                            <!--Post job ends here -->
+
+                            <!--My jobs !-->
+                            <div ng-show="show==2">
+                                <div class="table-responsive">
+                                    <view-jobs></view-jobs>
+                                </div>
+                            </div>
+                            <!--My jobs ends here !-->
+
+
+                            <!--Search cleaners!-->
+                            <div ng-show="show==3">
+                                <div class="table">
+                                    <form class="form-horizontal" id="scleaners" name="scleaners" ng-submit="search_cleaners()" ng-show="show_search_clean">
+                                        <div class="row">
+                                            <div class="col-md-5 col-xs-12 col-sm-12 p-b-20">
+                                                <label class="col-sm-12 col-xs-12">Choose Category</label>
+                                                <div class="input-group col-sm-12 col-xs-12">
+                                                    <div class="input-group-addon"><i class="fa fa-tasks" aria-hidden="true"></i></div>
+                                                    <select class="col-md-12 col-sm-12 col-xs-12" style="padding: 5px;" name="categories" ng-model="searchcleanData.category_id"
+                                                        ng-options="cat.id as cat.name for cat in pref_categories">
+                                                                                                                               <option value='' disabled selected>Choose Category</option>
+                                                        </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5 col-xs-12 col-sm-12 p-b-20">
+                                                <label class="col-sm-12 col-xs-12">Choose Region</label>
+                                                <div class="input-group col-sm-12 col-xs-12">
+                                                    <div class="input-group-addon"><i class="fa fa-globe" aria-hidden="true"></i></div>
+                                                    <select class="col-md-12 col-sm-12 col-xs-12 " style="padding: 5px;" name="regions" ng-model="searchcleanData.region_id"
+                                                        ng-options="reg.id as reg.name for reg in regions">
+                                                                                                                           <option value='' disabled selected>Choose Region</option>
+                                                            </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="">
+                                                    <button class="btn btn-success" type="submit">Search Cleaners</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <search-cleaner></search-cleaner>
+                                </div>
+                            </div>
+                            <!--Search cleaneres ends here !-->
+
+
+                            <!--Profile!-->
+                            <div ng-show="show==4">
+                                <form class="form-horizontal form-material col-md-8" name="updateprofileForm" ng-submit="updateprofileForm.$valid && updateprofile()"
+                                    novalidate>
+                                    <div class="form-group">
+                                        <p ng-show="submitted && updateprofileForm.fullname.$invalid" class="help-block color-ferozimp">Enter valid first name please</p>
+                                        <label class="col-md-12">First Name</label>
+                                        <div class="col-md-12">
+                                            <input class="form-control form-control-line" ng-pattern="/^[a-zA-Z ]+$/" name="firstname" id="firstname" type="text" ng-model="profileData.first_name"
+                                                ng-maxlength="40" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <p ng-show="submitted && updateprofileForm.lastname.$invalid" class="help-block color-ferozimp">Enter valid last name please</p>
+                                        <label class="col-md-12">Last Name</label>
+                                        <div class="col-md-12">
+                                            <input class="form-control form-control-line" ng-pattern="/^[a-zA-Z ]+$/" name="lastname" id="lastname" type="text" ng-model="profileData.last_name"
+                                                ng-maxlength="40" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <p ng-show="updateprofileForm.password.$invalid && !updateprofileForm.password.$pristine" class="help-block color-ferozimp">Enter a 10 character password</p>
+                                        <label class="col-md-12">Password</label>
+                                        <div class="col-md-12">
+                                            <input class="form-control form-control-line" type="password" ng-model="profileData.password" name="password" ng-minlength="10"
+                                                ng-maxlength="40">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <p ng-show="updateprofileForm.confirmpassword.$invalid && !updateprofileForm.confirmpassword.$pristine" class="help-block color-ferozimp">Enter a 10 character password</p>
+                                        <p ng-show="profileData.password && !profileData.confirmpassword" class="help-block color-ferozimp">Enter confirm password</p>
+                                        <p ng-show="profileData.password !== profileData.confirmpassword && profileData.confirmpassword" class="help-block color-ferozimp">Password does not match</p>
+                                        <label class="col-md-12">Confirm Password</label>
+                                        <div class="col-md-12">
+                                            <input class="form-control form-control-line" type="password" ng-model="profileData.confirmpassword" name="confirmpassword"
+                                                ng-minlength="{{profileData.password.length}}" ng-maxlength="{{profileData.password.length}}">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <p ng-show="submitted && updateprofileForm.contact_no.$invalid" class="help-block color-ferozimp">Enter at least 10 character valid contact number</p>
+                                        <label class="col-md-12">Contact No</label>
+                                        <div class="col-md-12">
+                                            <input class="form-control form-control-line" type="text" ng-model="profileData.contact_no" name="contact_no" ng-minlength="7"
+                                                ng-maxlength="40" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <p ng-show="submitted && updateprofileForm.address.$invalid" class="help-block color-ferozimp">Enter valid address</p>
+                                        <label class="col-md-12">Address</label>
+                                        <div class="col-md-12">
+                                            <input class="form-control form-control-line" type="text" name="address" id="address" ng-model="profileData.address" ng-maxlength="40"
+                                                required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <button class="btn btn-success" ng-click="submitted = true" type="submit">Update Profile</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <!--Profile ends here !-->
+
+                            <!-- popup view job -->
+                            <!--<div ng-show="show==5">
+                                    <a href="" style="color:blue" class="text-decor-under" ng-click="show=2">Back </a>
+                                    <view-job info="sjob"></view-job>
+                                </div>-->
+                            <!-- popup view job ends here>
+
+                                   <!-- popup update job -->
+                            <div ng-show="show==6">
+                                <a href="" style="color:blue" class="text-decor-under" ng-click="show=2">Back </a>
+                                <form class="form-horizontal" id="customerupForm" name="customerupForm" ng-submit="customerupForm.$valid && updatejob(jobData.id)"
+                                    novalidate>
+                                    <div class="form-group">
+                                        <label class="col-sm-12">Title</label>
+                                        <p ng-show="submitted && customerForm.title.$invalid" class="help-block color-red">Enter Title Please</p>
+                                        <div class="input-group col-sm-12">
+                                            <div class="input-group-addon"><i class="fa fa-header" aria-hidden="true"></i></div>
+                                            <input class="form-control" placeholder="Add title" name="title" ng-model="jobData.title" type="text" required>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-12">Price</label>
+                                        <p ng-show="submitted && customerForm.price.$invalid" class="help-block color-red col-sm-12">Enter Price Please</p>
+                                        <div class="input-group col-sm-12">
+                                            <div class="input-group-addon"><i class="fa fa-money" aria-hidden="true"></i></div>
+                                            <input class="form-control" placeholder="Price" name="price" ng-model="jobData.price" type="text">
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-12">Address</label>
+                                        <p ng-show="submitted && customerForm.address.$invalid" class="help-block color-red col-sm-12">Add address please</p>
+                                        <div class="input-group col-sm-12">
+                                            <div class="input-group-addon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                                            <input class="form-control" placeholder="Address" name="address" ng-model="jobData.address" type="text">
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-12">Contact No</label>
+                                        <p ng-show="submitted && customerForm.contact.$invalid" class="help-block color-red col-sm-12">Add contact number please</p>
+                                        <div class="input-group col-sm-12">
+                                            <div class="input-group-addon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+                                            <input class="form-control" placeholder="Contact No" name="contact" ng-model="jobData.contact_no" type="text" required>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-12">Choose Category</label>
+                                        <p ng-show="submitted && customerForm.categories.$invalid" class="help-block color-red">Choose valid Category</p>
+                                        <div class="input-group col-sm-12">
+                                            <div class="input-group-addon"><i class="fa fa-tasks" aria-hidden="true"></i></div>
+                                            <select class="col-md-12 col-sm-12 col-xs-12" style="padding: 5px;" name="categories" ng-model="jobData.category_id" ng-options="cat.id as cat.name for cat in pref_categories"
+                                                required>
+                                    </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-12">Choose Region</label>
+                                        <p ng-show="submitted && customerForm.regions.$invalid" class="help-block color-red">Choose valid region</p>
+                                        <div class="input-group col-sm-12">
+                                            <div class="input-group-addon"><i class="fa fa-globe" aria-hidden="true"></i></div>
+                                            <select class="col-md-12 col-sm-12 col-xs-12 " style="padding: 5px;" name="regions" ng-model="jobData.region_id" ng-options="reg.id as reg.name for reg in regions"
+                                                required>
+                                    </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-12">Choose Date</label>
+                                        <p ng-show="submitted && customerForm.date.$invalid" class="help-block color-red">Choose valid date</p>
+                                        <div class="input-group col-sm-12">
+                                            <div class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></div>
+                                            <input class="form-control mydatepicker m-l-8" name="date" ng-model="jobData.date" placeholder="yyyy/mm/dd" type="text" required>
+                                            <!--<span class="input-group-addon"><i class="icon-calender"></i></span>-->
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-12">Description</label>
+                                        <div class="col-md-12">
+                                            <p ng-show="submitted && customerupForm.description.$invalid" class="help-block color-red">Enter valid description</p>
+                                            <textarea rows="5" ng-model="jobData.description" name="description" class="form-control form-control-line"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                                        <div class="btn btn-primary" ngf-select="uploadFiles($files, 1)" multiple accept="image/*" ngf-model-invalid="invalidImages"
+                                            required ngf-model-invalid="errorFiles" ngf-max-size="5MB">
+                                            Select Files</div> <small>Max file size 5Mb </small>
+                                        <br>
+                                        <br>Files:
+                                        <ul>
+                                            <li style="display: inline" ng-repeat="f in files" style="font:smaller">
+                                                - {{f.name}} -
+                                            </li>
+                                        </ul>
+                                        <span class="progress" ng-show="progress >= 0">
+                                                    <div style="width:{{progress}}%" ng-bind="progress + '%'"></div>
+                                                </span> {{errorMsg}}
+                                    </div>
+                                    <div class="form-group">
+                                        <ul id="product_uplaoded_images">
+                                            <li ng-repeat="img in update_job_images track by $index" style="font:smaller" ng-if="img">
+                                                <img ng-src="{{$root.api_img_url}}{{img}}" alt="upload_image">
+                                                <span class="badge" ng-click="remove_up_upload_img($index)"><i class="fa fa-minus"></i></span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <button class="btn btn-success" type="submit" ng-click="submitted=true" ng-disabled="fileselected">Update Job</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- popup update job ends here>
+
+                                <!--pop up view profile after search cleaners result -->
+                            <!--<div ng-show="show==7">
+                                    <a href="" style="color:blue" class="text-decor-under" ng-click="show=3">Back </a>
+                                    <ul class="feeds">
+                                        <li>
+                                            <div><i class="fa fa-header" aria-hidden="true"></i></div>
+                                            First Name : {{profile.first_name}}</li>
+                                        <li>
+                                            <div><i class="fa fa-money" aria-hidden="true"></i></div>
+                                            Last Name : {{profile.last_name}}</li>
+                                        <li>
+
+                                            <div><i class="fa fa-phone" aria-hidden="true"></i></div>
+                                            Contact # : {{profile.contact_no}}</li>
+                                        <li>
+                                            <div><i class="fa fa-tasks" aria-hidden="true"></i></div>
+                                            email : {{profile.email}}</li>
+                                        <li>
+                                            <div><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                                            Address : {{profile.address}}</li>
+                                    </ul>
+                                </div>-->
+                            <!-- search cleaners result ends here-->
+                        </div>
+
+                    </div>
+                </div>
+                <!-- /.row -->
+            </div>
+        </div>
+
+        <div class="col-md-2 col-xs-2 col-sm-2 p-l-0">
+            <img ng-if="all_ads[2].image" ng-src="{{$root.api_img_url}}{{all_ads[2].image}}" alt="Not Available" class="img-thumbnail sidebar_img ">
+            <img ng-if="!all_ads[2].image" src="asset_files/images/default.png" alt="Image Not Available " class="img-thumbnail sidebar_img text-center">
+
+        </div>
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container-fluid -->
+
+<!-- /#page-wrapper -->
+<script>
+    jQuery('.mydatepicker, #datepicker').datepicker();
+    jQuery('.mydatepicker-autoclose').datepicker({
+        autoclose: true,
+        todayHighlight: true,
+        dateFormat: 'yyyy/mm/dd'
+    });
+
+</script>

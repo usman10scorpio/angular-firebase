@@ -1,0 +1,155 @@
+<!-- Top Navigation -->
+<!--<p> role-------------{{$root.role}} auth--------------- {{$root.auth_token}}</p>-->
+<nav class="navbar navbar-default navbar-static-top m-b-0" ng-show="$root.role && $root.auth_token">
+  <div class="navbar-header">
+    <a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="ti-menu"></i></a>
+    <div class="top-left-part">
+      <a href="/dashboard"><img class="p-t-10 height-50" src="asset_files/images/logo1.PNG" alt="ecoclean"></a>
+    </div>
+    <ul class="nav navbar-top-links navbar-right pull-right">
+      <li class="dropdown" ng-show="$root.role ==='20'" ng-click="notifications()">
+        <a class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="false">
+          <i class="fa fa-envelope-o color-blue" aria-hidden="true"></i>
+          <div class="notify">
+            <span class="heartbit"></span>
+            <span class="point"></span>
+          </div>
+        </a>
+        <ul class="dropdown-menu mailbox animated bounceInDown scroll-dropdown height-250">
+          <li ng-if="my_notifications" ng-repeat="notifs in my_notifications">
+            <div class="message-center">
+              <a ng-href="#/feedback-cleaner/{{notifs.job_id}}/{{notifs.customer_user_id}}">
+                <div class="mail-contnet">
+                  <h5>{{notifs.first_name}}</h5>
+                  <span class="mail-desc">Hi , I have reviewed you , please review me back</span><!-- <span class="time">9:02 AM</span>--> </div>
+              </a>
+            </div>
+          </li>
+          <li ng-if="my_notifications == ''">
+          <p class="text-center">No New Notifications</p>
+            </li>
+          <!--<li>
+            <a class="text-center" href="javascript:void(0);"> <strong>See all notifications</strong> <i class="fa fa-angle-right"></i> </a>
+          </li>-->
+        </ul>
+        <!-- /.dropdown-messages -->
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle profile-pic" data-toggle="dropdown" aria-expanded="false"> <img src="asset_files/images/users/varun.jpg" alt="user-img" class="img-circle" width="36"><b class="hidden-xs color-blue">Steave</b>          </a>
+        <ul class="dropdown-menu dropdown-user animated flipInY">
+          <!--<li><a href="#"><i class="ti-user"></i> My Profile</a></li>
+          <li><a href="#"><i class="ti-wallet"></i> My Balance</a></li>
+          <li><a href="#"><i class="ti-email"></i> Inbox</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="#"><i class="ti-settings"></i> Account Setting</a></li>
+          <li role="separator" class="divider"></li>-->
+          <li ng-if="$root.role === '20'"><a href="#/dash"><i class="fa fa-home"></i> Home</a></li>
+          <li ng-if="$root.role === '10'"><a href="#/cust-dash"><i class="fa fa-home"></i> Home</a></li>
+          <li><a href="" ng-click="$root.logout()"><i class="fa fa-power-off"></i> Logout</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="navbar-default sidebar" role="navigation" ng-show="!$root.role || !$root.auth_token">
+  <div class="container">
+    <div class="row height-130 pd-top-25">
+      <div class="col-md-3 col-xs-12 col-sm-6">
+        <a class="logo" href="index.html">
+          <span>
+  							<img src="asset_files/images/logo1.PNG" alt="ecoclean">
+  						</span>
+        </a>
+      </div>
+      <div class="col-md-offset-7 col-md-2 col-xs-12 col-sm-6 p-t-10">
+        <div class="col-md-6 col-xs-6 col-sm-6">
+          <a href="/dashboard/#/login" class="btn btn-link width-100p">login</a>
+        </div>
+        <div class="col-md-6 col-xs-6 col-sm-6">
+          <a href="/dashboard/#/signup" class="btn btn-info width-100p">Signup</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--<div class="navbar-default sidebar" role="navigation">
+  <div class="container">
+    <div class="height-130 pd-top-25">
+      <div class="col-md-2 col-xs-12 col-sm-12">
+        <a class="logo" href="/dashboard">
+          <span>
+  							<img src="asset_files/images/logo1.PNG" alt="ecoclean">
+  						</span>
+        </a>
+      </div>
+      <div class="col-md-offset-1 col-md-5 col-xs-12 col-sm-8">
+        <ul class="nav" id="side-menu">
+          <li>
+            <a href="" class="waves-effect">
+              <i data-icon="P" class="linea-icon linea-basic fa-fw">
+              </i>
+              <span class="hide-menu">Home</span></a>
+          </li>
+
+         <li> <a href="javascript:void(0)" class="waves-effect"><i data-icon="F" class="linea-icon linea-software fa-fw"></i> 
+         <span class="hide-menu">Pages<span class="fa arrow"></span></span></a>-->
+<!--<ul class="nav nav-second-level">
+              <li> <a href="javascript:void(0)">Second Level Item</a> </li>
+              <li> <a href="javascript:void(0)">Second Level Item</a> </li>
+              <li> <a href="javascript:void(0)" class="waves-effect">Third Level <span class="fa arrow"></span></a>
+                <ul class="nav nav-third-level">
+                  <li> <a href="javascript:void(0)">Third Level Item</a> </li>
+                  <li> <a href="javascript:void(0)">Third Level Item</a> </li>
+                  <li> <a href="javascript:void(0)">Third Level Item</a> </li>
+                  <li> <a href="javascript:void(0)">Third Level Item</a> </li>
+                </ul>
+              </li>
+            </ul>-->
+</li>
+<!--
+          <li>
+            <a href="" class="waves-effect">
+              <i data-icon="P" class="linea-icon linea-basic fa-fw"></i>
+              <span class="hide-menu">Services</span></a>
+          </li>
+          <li> <a href="" class="waves-effect"><i data-icon="P" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Blog</span></a>            </li>
+          <li> <a href="javascript:void(0)" class="waves-effect"><i data-icon="F" class="linea-icon linea-software fa-fw"></i> <span class="hide-menu">Gallery<span class="fa arrow"></span></span></a>
+            <!--<ul class="nav nav-second-level">-->
+<!--<li> <a href="javascript:void(0)">Second Level Item</a> </li>
+              <li> <a href="javascript:void(0)">Second Level Item</a> </li>
+              <li> <a href="javascript:void(0)" class="waves-effect">Third Level <span class="fa arrow"></span></a>
+                <ul class="nav nav-third-level">
+                  <li> <a href="javascript:void(0)">Third Level Item</a> </li>
+                  <li> <a href="javascript:void(0)">Third Level Item</a> </li>
+                  <li> <a href="javascript:void(0)">Third Level Item</a> </li>
+                  <li> <a href="javascript:void(0)">Third Level Item</a> </li>
+                </ul>
+              </li>
+            </ul>-->
+<!--</li>
+        </ul>
+      </div>
+      <div class="col-md-2 col-xs-12 col-sm-4 p-t-10">
+        <button id="wid-perc" class="btn btn-info">Schedule Cleaning</button>
+      </div>
+      <div class="col-md-2">
+        <ul class="nav navbar-top-links navbar-right pull-right">
+          <li class="dropdown">
+            <a class="dropdown-toggle profile-pic" data-toggle="dropdown" aria-expanded="false"> <img src="asset_files/images/users/varun.jpg" alt="user-img" class="img-circle" width="36"><b class="hidden-xs color-blue">Steave</b>              </a>
+            <ul class="dropdown-menu dropdown-user animated flipInY">
+
+              <li><a href="" ng-click="$root.logout()"><i class="fa fa-power-off"></i> Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>-->
+<!-- End Top Navigation -->
+<script>
+  jQuery('.dropdown').click(function () {
+    jQuery(this).toggleClass("open");
+  });
+
+</script>

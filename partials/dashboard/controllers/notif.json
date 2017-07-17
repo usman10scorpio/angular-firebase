@@ -1,0 +1,46 @@
+{
+    "notifs": [
+        {
+            "customername": "Usman",
+            "message": "Its been a wonderfull experience with you. Really Enjoyed and glad to spent some quality time chit chats. Please leave feed back to let others know how was Your experience with Me.",
+            "jobid": "1",
+            "customerid": "1"
+        },
+        {
+            "customername": "Numan",
+            "message": "Its been a wonderfull experience with you. Really Enjoyed and glad to spent some quality time chit chats. Please leave feed back to let others know how was Your experience with Me.",
+            "jobid": "2",
+            "customerid": "2"
+        },
+        {
+            "customername": "Safi",
+            "message": "Its been a wonderfull experience with you. Really Enjoyed and glad to spent some quality time chit chats. Please leave feed back to let others know how was Your experience with Me.",
+            "jobid": "3",
+            "customerid": "3"
+        },
+        {
+            "customername": "Mushahidh",
+            "message": "Its been a wonderfull experience with you. Really Enjoyed and glad to spent some quality time chit chats. Please leave feed back to let others know how was Your experience with Me.",
+            "jobid": "4",
+            "customerid": "4"
+        },
+        {
+            "customername": "irfan",
+            "message": "Its been a wonderfull experience with you. Really Enjoyed and glad to spent some quality time chit chats. Please leave feed back to let others know how was Your experience with Me.",
+            "jobid": "5",
+            "customerid": "5"
+        },
+        {
+            "customername": "Yasir",
+            "message": "Its been a wonderfull experience with you. Really Enjoyed and glad to spent some quality time chit chats. Please leave feed back to let others know how was Your experience with Me.",
+            "jobid": "6",
+            "customerid": "6"
+        },
+        {
+            "customername":"bilal",
+            "message": "Its been a wonderfull experience with you. Really Enjoyed and glad to spent some quality time chit chats. Please leave feed back to let others know how was Your experience with Me.",
+            "jobid": "7",
+            "customerid": "7"
+        }
+    ]
+}

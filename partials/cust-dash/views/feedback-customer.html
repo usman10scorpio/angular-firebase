@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row bg-title">
+        <div style="max-width: 700px; padding:50px 0;  margin: 0px auto; font-size: 14px">
+            <div style="padding: 40px; background: #fff;">
+                <form id="custfeedForm" name="custfeedForm" ng-submit="custfeedForm.$valid && cleaner_rating()" ng-init="all_cleaners_list()"
+                    novalidate>
+                    <table style="width: 100%;" cellspacing="0" cellpadding="0" border="0">
+                        <tbody>
+                            <tr>
+                                <td><b>Dear Employee</b>
+                                    <p>Its been a wonderfull experience with you. Really Enjoyed and glad to spent some quality
+                                        time chit chats. Please leave feed back to let others know how was Your experience
+                                        with Me.
+                                    </p>
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <p ng-show="submitted && custfeedForm.cleaner_user_id.$invalid" class="help-block color-red">Choose Cleaner Please</p>
+                                        <select name="cleaner_user_id" class="col-md-12 col-sm-12 col-xs-12" ng-model="ratingData.cleaner_user_id" ng-options="all.id as all.username for all in all_cleaners"
+                                            required>
+                                         <option value='' disabled selected>Select a User from List...</option>
+                                      </select>
+                                    </div>
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <h5 style="font-weight: bold;text-align: center">Rate Your Experience </h5>
+                                        <p ng-show="submitted && custfeedForm.rating.$invalid" class="help-block color-red text-center">Choose Rating Please</p>
+                                        <div class="col-md-7 col-md-offset-5 col-sm-12 col-xs-12">
+                                            <ng-rate-it name="rating" ng-model="ratingData.rating" required></ng-rate-it>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <button class="btn btn-primary pull-right" ng-click="submitted=true;">Rate Cleaner
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

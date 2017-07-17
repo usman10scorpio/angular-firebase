@@ -1,0 +1,39 @@
+<section>
+    <header-temp></header-temp>
+    <div id="page-wrapper">
+        <div class="container-fluid">
+            <div class="row bg-title">
+            </div>
+            <!-- /.row -->
+            <!-- .row -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="white-box p-l-0">
+                        <!-- row -->
+                        <div class="row">
+                            <div class="col-lg-2 col-md-3  col-sm-12 col-xs-12 inbox-panel  p-r-0">
+                                <div>
+                                    <div class="list-group mail-list">
+                                        <a href="" ng-click="show=1" class="list-group-item"><i class="fa fa-sticky-note" aria-hidden="true"></i> Post Job</a>
+                                        <a href="" ng-click="show=2" class="list-group-item"><i class="fa fa-briefcase" aria-hidden="true"></i> My  Jobs</a>
+                                        <a href="" ng-click="show=3" class="list-group-item"><i class="fa fa-search" aria-hidden="true"></i> Search Cleaners</a>
+                                        <a href="" ng-click="show=4" class="list-group-item"><i class="fa fa-user" aria-hidden="true"></i> Profile</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-10 col-md-9 col-sm-12 col-xs-12 mail_listing">
+                                <div class="inbox-center">
+                                    <div ng-view></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </div>
+    <footer-temp></footer-temp>
+</section>

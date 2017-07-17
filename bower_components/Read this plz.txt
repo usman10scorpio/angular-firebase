@@ -1,0 +1,2 @@
+dotansimha-angularjs-dropdown-multiselect-e73fca5 was not added through bower, as it was a conflict in which it was asking to resolve to some angular versionn 
+so i just download it and put it in th bower componnents folder

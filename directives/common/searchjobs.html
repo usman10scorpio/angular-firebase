@@ -1,0 +1,44 @@
+<!--<table class="table table-striped" ng-show="show_table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Price</th>
+            <th>contact No</th>
+            <th>Category</th>
+            <th>Region</th>
+            <th>Date</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="result in results_search">
+            <td class="txt-oflo">{{result.title}}</td>
+            <td class="txt-oflo">{{result.price}}</td>
+            <td class="txt-oflo">{{result.contact_no}}</td>
+            <td class="txt-oflo">{{result.category.name}}</td>
+            <td class="txt-oflo">{{result.region.name}}</td>
+            <td class="txt-oflo">{{result.date}}</td>
+            <td class="txt-oflo">
+                <!--<button type="button" class="btn btn-default" ng-click="viewJobModel(jobs)">View Job</button>                                                                                            -->
+<!--<a href="" ng-click="viewJobModel(result)"><i class="fa fa-eye" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+    </tbody>
+    <div ng-show="show_table"><button ng-click="show_table=false;show_search=true;searchData=[];" class="btn btn-success">Back</button></div>
+
+</table>-->
+
+<ul class="search-listing" ng-show="show_table">
+    <div ng-show="show_table"><button ng-click="show_table=false;show_search=true;searchData=[];" class="btn btn-success">Back</button></div>
+    <li ng-repeat="result in results_search">
+        <h3>
+            <a href="#/single-job/{{result.id}}">{{result.title}}</a>
+        </h3>
+        <p><span ng-if="result.price"><i class="fa fa-usd" aria-hidden="true"></i> {{result.price}}</span>
+            <span class="p-l-10" ng-if="result.date"><i class="fa fa-calendar" aria-hidden="true"></i> {{result.date}}</span>
+            <span class="p-l-10" ng-if="result.category.name"><i class="fa fa-tasks" aria-hidden="true"></i> {{result.category.name}}</span>
+            <span class="p-l-10" ng-if="result.region.name"><i class="fa fa-map-marker" aria-hidden="true"></i> {{result.region.name}}</span>
+            <span class="p-l-10" ng-if="result.contact_no"><i class="fa fa-phone" aria-hidden="true"></i> {{result.contact_no}}</span>
+        </p>
+    </li>
+</ul>

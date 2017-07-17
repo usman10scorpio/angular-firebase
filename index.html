@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html ng-app="cleaner">
+
+<head>
+  <base href="">
+  <!-- for server <base href="/cleaner/frontend/dashboard/"-->
+  <meta name="language" content="en" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height"
+  />
+
+  <meta name="HandheldFriendly" content="true" />
+  <meta name="fragment" content="#">
+  <title>Go Cleaner</title>
+  <!-- Bootstrap Core CSS -->
+  <link rel="stylesheet" href="asset_files/css/font-awesome/css/font-awesome.min.css">
+  <link href="asset_files/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.min.css" type="text/css">
+  <!-- Menu CSS -->
+  <link href="bower_components/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet">
+  <link href="asset_files/css/owl.carousel/owl.carousel.min.css" rel="stylesheet" type="text/css" />
+  <link href="asset_files/css/owl.carousel/owl.theme.default.css" rel="stylesheet" type="text/css" />
+  <!-- toast CSS -->
+  <link href="asset_files/css/toast-master/jquery.toast.css" rel="stylesheet">
+  <!-- morris CSS -->
+  <link href="bower_components/morrisjs/morris.css" rel="stylesheet">
+  <!-- animation CSS -->
+  <link href="asset_files/css/animate.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="asset_files/css/mystyles.css" rel="stylesheet">
+  <link href="bower_components/AngularJS-Toaster/toaster.min.css" rel="stylesheet">
+  <link href="bower_components/angular-ui-select/dist/select.css" rel="stylesheet" type="text/css" />
+  <link href="asset_files/css/select2-3.4.5.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.8.5/css/selectize.default.css">
+  <link rel="stylesheet" href="bower_components/angular-rateit/dist/ng-rateit.css" />
+  <!-- Date picker plugins css -->
+  <link href="bower_components/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
+  <!-- color CSS -->
+  <link href="asset_files/css/colors/megna.css" id="theme" rel="stylesheet">
+  <!--Style-->
+  <link rel="icon" href="asset_files/img/fav.png">
+</head>
+
+<body>
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="cssload-speeding-wheel"></div>
+  </div>
+  <div id="wrapper" class="ng-cloak" ng-cloak>
+    <div>
+      <toaster-container toaster-options="{'time-out': 3000, 'close-button':true, 'animation-class': 'toast-top-right'}"></toaster-container>
+    </div>
+    <header-temp></header-temp>
+    <div id="page-wrapper">
+      <div ng-view></div>
+    </div>
+    <footer-temp></footer-temp>
+  </div>
+  <!-- Jquery-->
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- Menu Plugin JavaScript -->
+  <script src="bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
+  <!--slimscroll JavaScript -->
+  <!--<script src="asset_files/js/jquery.slimscroll.js"></script>-->
+  <!--Wave Effects -->
+  <script src="asset_files/js/waves.js"></script>
+  <!-- jQuery for carousel -->
+  <script src="bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
+  <script src="bower_components/owl.carousel/dist/owl.custom.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script src="asset_files/js/custom.js"></script>
+  <!--Style Switcher -->
+  <script src="bower_components/styleswitcher/jQuery.style.switcher.js"></script>
+  <script src="//unpkg.com/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+
+  <!-- AngularFire -->
+  <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+  <script>
+    document.write("<script type='text/javascript' src='require.js'><\/script>");
+  </script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBXooAEp9LrJd_8A1PRdwthK9wiuKCAm8g",
+      authDomain: "todo-e1672.firebaseapp.com",
+      databaseURL: "https://todo-e1672.firebaseio.com",
+      projectId: "todo-e1672",
+      storageBucket: "todo-e1672.appspot.com",
+      messagingSenderId: "335483156370"
+    };
+    firebase.initializeApp(config);
+  </script>
+</body>
+
+</html>

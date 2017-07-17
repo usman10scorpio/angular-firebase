@@ -1,0 +1,60 @@
+<section id="" class="container m-t-100 p-t-30 p-b-30 ">
+   <div class="row">
+    <div class="col-sm-12 col-md-offset-1 col-md-4 ">
+         <form class="form-horizontal form-material" id="loginform" name="registerForm" ng-submit="registerForm.$valid && register()"
+                novalidate>
+                <h3 class="box-title m-b-20">Register Company</h3>
+                <div class="form-group ">
+                    <div class="col-xs-12">
+                        <p ng-show="submitted && registerForm.username.$invalid" class="help-block color-red">Enter valid name</p>
+                        <input class="form-control" type="text" placeholder="Company Name" name="username" ng-model="registerData.username" aria-required="true"
+                            ng-maxlength="40" required>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <div class="col-xs-12">
+                        <p ng-show="submitted && registerForm.email.$invalid" class="help-block color-red">Enter valid email address</p>
+                        <input class="form-control" type="text" placeholder="Email" ng-model="registerData.email" aria-required="true" name="email"
+                            required>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <div class="col-xs-12">
+                        <p ng-show="submitted && registerForm.password.$invalid" class="help-block color-red">Minimum 10 Character Password is required</p>
+                        <input class="form-control" type="password" placeholder="Password" ng-model="registerData.password" name="password" ng-minlength="10"
+                            ng-maxlength="20" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <p ng-show="submitted && registerForm.confirmpassword.$invalid" class="help-block color-red">Password does not match</p>
+                        <p ng-show="registerData.password !== registerData.confirmpassword && registerData.confirmpassword" class="help-block color-red">Password does not match</p>
+                        <input class="form-control" type="password" placeholder="Confirm Password" ng-model="registerData.confirmpassword" name="confirmpassword"
+                            ng-minlength="10" ng-maxlength="20" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <p ng-show="submitted && registerForm.role.$error.required" class="help-block color-red">Choose User Type</p>
+
+                        <select class="form-control" name="role" ng-model="registerData.role" required>
+                                                <option value="" ng-disabled="true">Role</option>
+                    <option value="20">Cleaner</option>
+                    <option value="10">Customer</option>
+                  </select>
+                    </div>
+                </div>
+                <div class="form-group text-center m-t-20">
+                    <div class="col-xs-12">
+                        <button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" ng-click="submitted=true" type="submit">Sign Up</button>
+                    </div>
+                </div>
+                <div class="form-group m-b-0">
+                    <div class="col-sm-12 text-center">
+                        <p>Already have an account? <a href="#/login" class="text-primary m-l-5"><b>Sign In</b></a></p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

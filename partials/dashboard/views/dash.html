@@ -1,0 +1,304 @@
+<!-- Page Content -->
+<!--<div id="view_job" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content popups">
+            <div class="modal-header fb-header title-bar text-center">
+                View Job<button type="button" class="close-signin pull-right" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="login_wrap_body">
+                    <div class="">
+                        <div class="white-box">
+                            <view-job info="page"></view-job>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->
+<!-- /.row -->
+<!-- .row -->
+<div class="container p-t-20">
+    <div class="row">
+        <div class="col-sm-12 col-md-offset-1 col-md-10 p-t-2">
+            <div class="white-box p-l-0  p-t-0">
+                <!-- row -->
+                <div class="row">
+                    <div class="col-lg-2 col-md-3  col-sm-12 col-xs-12 inbox-panel  p-r-0">
+                        <div>
+                            <div class="list-group mail-list">
+                                <a href="" ng-click="dash_show=4;viewprofile($root.id);" class="list-group-item"><i class="fa fa-user" aria-hidden="true"></i> Profile</a>
+                                <a href="" ng-click="dash_show=1" class="list-group-item"><i class="fa fa-plus" aria-hidden="true"></i> Add Choices</a>
+                                <a href="" ng-click="dash_show=2" class="list-group-item"><i class="fa fa-briefcase" aria-hidden="true"></i> Jobs History</a>
+                                <a href="" ng-click="dash_show=3" class="list-group-item"><i class="fa fa-search" aria-hidden="true"></i> Search Jobs</a>
+                                <a href="" ng-click="dash_show=7" class="list-group-item"><i class="fa fa-paper-plane" aria-hidden="true"></i> Post Ad</a>
+                                <!--<a href="" ng-click="dash_show=8" class="list-group-item"><i class="fa fa-image" aria-hidden="true"></i>  Ads History</a>-->
+
+                                <!--<a href="#/feedback-cleaner" class="list-group-item"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Feedback</a>-->
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-10 col-md-9 col-sm-12 col-xs-12 mail_listing p-t-20">
+                        <div class="inbox-center">
+
+                            <!--Add choices !-->
+                            <div ng-show="dash_show==1">
+                                <form class="form-horizontal" style="overflow: visible;" id="adForm" name="cleanerForm" ng-submit="cleanerForm.$valid && preferredform()">
+                                    <div class="form-group">
+                                        <label class="col-sm-12 color-blue">Add preferred Categories</label>
+                                        <div class="col-sm-12 m-t-10">
+                                            <p ng-show="submitted && cleanerForm.preferred_categories.$invalid" class="help-block color-red">Choose valid Categories</p>
+                                            <div class="col-sm-3 m-t-10" ng-repeat="cats in categories">
+                                                <input type="checkbox" data-checklist-model="categoriess" data-checklist-value="cats">
+                                                <label>{{cats.name}}</label>
+                                            </div>
+                                        </div>
+                                        <!--<ui-select multiple sortable="true" name="preferred_categories" ng-model="dash.categoriess" theme="select2" class="wid-100-p"
+                                            title="preferred Categories" required>
+                                            <ui-select-match placeholder="Preferred Categories">{{$item.name}}</ui-select-match>
+                                            <ui-select-choices repeat="item as item in dash.categories | filter: $select.search">
+                                                <div ng-bind-html="item.name | highlight: $select.search"></div>
+                                            </ui-select-choices>
+                                        </ui-select>-->
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-12 color-blue">Add preferred Regions</label>
+                                        <div class="col-sm-12 m-t-10">
+                                            <p ng-show="submitted && cleanerForm.preferred_regions.$invalid" class="help-block color-red">Choose valid regions</p>
+                                            <div class="col-sm-3 m-t-10" ng-repeat="reg in regions">
+                                                <input type="checkbox" data-checklist-model="regionss" data-checklist-value="reg">
+                                                <label>{{reg.name}}</label>
+                                            </div>
+
+                                            <!--<ui-select multiple sortable="true" name="preferred_regions" ng-model="dash.regionss" theme="select2" class="wid-100-p" title="preferred Regions"
+                                                required>
+                                                <ui-select-match placeholder="Preferred Regions">{{$item.name}}</ui-select-match>
+                                                <ui-select-choices repeat="item as item in dash.regions | filter: $select.search">
+                                                    <div ng-bind-html="item.name | highlight: $select.search"></div>
+                                                </ui-select-choices>
+                                            </ui-select>-->
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <button class="btn btn-success" type="submit" ng-click="submitted=true">Add Choices</button>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+                            <!--add choices ends here -->
+
+                            <!--jobs !-->
+                            <div ng-show="dash_show==2">
+                                <div class="table-responsive">
+                                    <view-jobs></view-jobs>
+                                </div>
+                            </div>
+                            <!--jobs ends here !-->
+
+                            <!--Search jobs!-->
+                            <div ng-show="dash_show==3">
+                                <div class="table-responsive">
+                                    <form class="form-horizontal" id="customerForm" name="customerForm" ng-submit="search_job()" ng-show="show_search">
+                                        <div class="col-md-12 p-b-20">
+                                            <label class="col-sm-12 color-blue">Choose Category</label>
+                                            <!--<div class="input-group col-sm-12">
+                                                <div class="input-group-addon"><i class="fa fa-tasks" aria-hidden="true"></i></div>
+                                                <select class="col-md-12 col-sm-12 col-xs-12" style="padding: 5px;" name="categories" ng-model="searchData.category_id" ng-options="cat.id as cat.name for cat in categories">
+                                                <option value='' disabled selected>Choose Category</option>
+                                                  </select>
+                                            </div>-->
+                                            <div class="col-sm-4 m-t-10" name="categories" ng-repeat="cat in categories">
+                                                <input type="checkbox" ng-model="searchData.category_id" ng-true-value="{{cat.id}}" ng-false-value="">
+                                                <label>{{cat.name}}</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 p-b-20">
+                                            <label class="col-sm-12 color-blue">Choose Region</label>
+                                            <!--<div class="input-group col-sm-12">
+                                                <div class="input-group-addon"><i class="fa fa-globe" aria-hidden="true"></i></div>
+                                                <select class="col-md-12 col-sm-12 col-xs-12 " style="padding: 5px;" name="regions" ng-model="searchData.region_id" ng-options="reg.id as reg.name for reg in regions">
+                                                                <option value='' disabled selected>Choose Region</option>
+                                                </select>
+                                            </div>-->
+                                            <div class="col-sm-4 m-t-10" name="regions" ng-repeat="reg in regions">
+                                                <input type="checkbox" ng-model="searchData.region_id" ng-true-value="{{reg.id}}" ng-false-value="">
+                                                <label>{{reg.name}}</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5 p-b-20">
+                                            <div class="col-sm-12">
+                                                <button class="btn btn-success" type="submit">Search Jobs</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <search-jobs></search-jobs>
+                                </div>
+                            </div>
+                            <!--Search jobs ends here !-->
+
+                            <!--Profile!-->
+                            <div ng-show="dash_show==4">
+                                <form class="form-horizontal form-material col-md-8" name="updateprofileForm" ng-submit="updateprofileForm.$valid && updateprofile()"
+                                    novalidate>
+                                    <div class="form-group">
+                                        <p ng-show="submitted && updateprofileForm.fullname.$invalid" class="help-block color-ferozimp">Enter valid first name please</p>
+                                        <label class="col-md-12">First Name</label>
+                                        <div class="col-md-12">
+                                            <input class="form-control form-control-line" ng-pattern="/^[a-zA-Z ]+$/" name="firstname" id="firstname" type="text" ng-model="profileData.first_name"
+                                                ng-maxlength="40" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <p ng-show="submitted && updateprofileForm.lastname.$invalid" class="help-block color-ferozimp">Enter valid last name please</p>
+                                        <label class="col-md-12">Last Name</label>
+                                        <div class="col-md-12">
+                                            <input class="form-control form-control-line" ng-pattern="/^[a-zA-Z ]+$/" name="lastname" id="lastname" type="text" ng-model="profileData.last_name"
+                                                ng-maxlength="40" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <p ng-show="updateprofileForm.password.$invalid && !updateprofileForm.password.$pristine" class="help-block color-ferozimp">Enter a 10 character password</p>
+                                        <label class="col-md-12">Password</label>
+                                        <div class="col-md-12">
+                                            <input class="form-control form-control-line" type="password" ng-model="profileData.password" name="password" ng-minlength="10"
+                                                ng-maxlength="40">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <p ng-show="updateprofileForm.confirmpassword.$invalid && !updateprofileForm.confirmpassword.$pristine" class="help-block color-ferozimp">Enter a 10 character password</p>
+                                        <p ng-show="profileData.password && !profileData.confirmpassword" class="help-block color-ferozimp">Enter confirm password</p>
+                                        <p ng-show="profileData.password !== profileData.confirmpassword && profileData.confirmpassword" class="help-block color-ferozimp">Password does not match</p>
+                                        <label class="col-md-12">Confirm Password</label>
+                                        <div class="col-md-12">
+                                            <input class="form-control form-control-line" type="password" ng-model="profileData.confirmpassword" name="confirmpassword"
+                                                ng-minlength="{{profileData.password.length}}" ng-maxlength="{{profileData.password.length}}">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <p ng-show="submitted && updateprofileForm.contact_no.$invalid" class="help-block color-ferozimp">Enter at least 10 character valid contact number</p>
+                                        <label class="col-md-12">Contact No</label>
+                                        <div class="col-md-12">
+                                            <input class="form-control form-control-line" type="text" ng-model="profileData.contact_no" name="contact_no" ng-minlength="7"
+                                                ng-maxlength="40" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <p ng-show="submitted && updateprofileForm.address.$invalid" class="help-block color-ferozimp">Enter valid address</p>
+                                        <label class="col-md-12">Address</label>
+                                        <div class="col-md-12">
+                                            <input class="form-control form-control-line" type="text" name="address" id="address" ng-model="profileData.address" ng-maxlength="40"
+                                                required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <button class="btn btn-success" ng-click="submitted = true" type="submit">Update Profile</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <!--Profile ends here !-->
+
+                            <!-- popup view job -->
+                            <div ng-show="dash_show==5">
+                                <button href="" style="color:blue" class="btn btn-success" ng-click="dash_show=3">Back </button>
+                                <view-job info="page"></view-job>
+                            </div>
+                            <!-- popup view job ends here-->
+
+                            <div ng-show="dash_show==7" ng-init="get_subscriptions();get_adplaces()">
+                                <form class="form-horizontal" id="adForm" name="adForm" ng-submit="adForm.$valid && post_ad()" novalidate>
+                                    <div class="form-group">
+                                        <label class="col-sm-12">Subscriptions</label>
+                                        <div class="col-sm-12">
+                                            <p ng-show="posted && adForm.subscription_id.$invalid" class="help-block color-red">Choose valid Subscription</p>
+                                            <select class="col-md-12 col-sm-12 col-xs-12" style="padding: 5px;" name="subscription_id" ng-model="postadData.subscription_id"
+                                                ng-options="sub.id as sub.name for sub in all_subscriptions" required>
+                                                               <option value = '' disabled selected>Choose Subscription</option>
+                                           </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-12">Ads</label>
+                                        <div class="col-sm-12">
+                                            <p ng-show="posted && adForm.ad_place_id.$invalid" class="help-block color-red">Choose valid Ad</p>
+                                            <select class="col-md-12 col-sm-12 col-xs-12" style="padding: 5px;" name="ad_place_id" ng-model="postadData.ad_place_id"
+                                                ng-options="ads.id as ads.name for ads in adplaces" ng-click="sizeCheck()" required>
+                                                               <option value='' disabled selected>Choose Ad</option>
+                                           </select>
+                                        </div>
+                                    </div>
+                                    <img ng-src="{{api_img_url}}{{postadData.resp_img_str}}" ng-if="postadData.resp_img_str" style="width:100px" alt="upload_image">
+
+                                    <p ng-if="postadData.ad_place_id" class="help-block text-center">Image should be {{ad_width}}(width) * {{ad_height}}(height)</p>
+
+                                    <button ng-if="postadData.ad_place_id" type="file" class="m-b-20" name="file" ng-model="picFile" ngf-select="uploadFiles($file, $invalidFiles)"
+                                        accept="image/*" ngf-max-size="5MB" ngf-min-height="{{ad_height}}" ngf-max-height="{{ad_height}}"
+                                        ngf-min-width="{{ad_width}}" ngf-max-width="{{ad_width}}" required> Select File</button>
+
+                                    <p class="help-block color-red" ng-if="adForm.file.$error.maxWidth || adForm.file.$error.minHeight || adForm.file.$error.maxHeight || adForm.file.$error.minWidth">File Dimensions are not correct </p>
+
+                                    <div style="font:smaller" class="m-b-20" ng-if="f">{{f.name}} {{errFile.name}} {{errFile.$error}} {{errFile.$errorParam}}
+                                        <span class="progress" ng-show="f.progress >= 0">
+                                             <div style="width:{{f.progress}}%"  
+                                                    ng-bind="f.progress + '%'">
+                                                    </div>
+                                             </span>
+                                    </div>
+                                    {{errorMsg}}
+
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <button class="btn btn-success" type="submit" ng-click="posted=true" ng-disabled="fileselected">Post Ad</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div ng-show="dash_show==8">
+                                <div class="inbox-center">
+                                    <table class="table table-hover">
+                                        <tbody>
+                                            <tr>
+                                                <td class="hidden-xs">Genelia Roshan</td>
+                                                <td class="max-texts"><a href="inbox-detail.html">Lorem ipsum perspiciatis unde omnis iste natus error sit voluptatem</a></td>
+                                                <td class="text-right"> May 09 </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="hidden-xs">Ritesh Deshmukh</td>
+                                                <td class="max-texts"><a href="inbox-detail.html">Lorem ipsum perspiciatis unde omnis iste natus error sit voluptatem</a></td>
+                                                <td class="text-right"> May 09 </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.row -->
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container-fluid -->
+
+<!-- /#page-wrapper -->
+<script>
+    jQuery('.mydatepicker, #datepicker').datepicker();
+    jQuery('.mydatepicker-autoclose').datepicker({
+        autoclose: true,
+        todayHighlight: true,
+        dateFormat: 'yyyy/mm/dd'
+    });
+
+</script>
